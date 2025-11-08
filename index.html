@@ -21,81 +21,24 @@
       min-height:100vh;
       overflow-x:hidden;
     }
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:20px;
-      animation: fadeIn 1.2s ease;
-    }
-    header{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      gap:15px;
-      padding:20px;
-      border-radius:20px;
-      background:linear-gradient(90deg,rgba(123,47,247,0.3),rgba(0,255,255,0.2));
-      box-shadow:0 0 25px rgba(0,255,255,0.25);
-      animation: float 4s ease-in-out infinite;
-    }
-    .logo{
-      width:100%;
-      max-width:500px;
-      height:auto;
-      border-radius:20px;
-      overflow:hidden;
-      border:3px solid var(--accent);
-      box-shadow:0 0 25px var(--accent2),0 0 50px rgba(123,47,247,0.5);
-      animation: pulse 3s infinite;
-      transform:rotate(0deg);
-      transition:transform 0.6s ease, box-shadow 0.6s ease;
-    }
-    .logo:hover{
-      transform:scale(1.05) rotate(1deg);
-      box-shadow:0 0 45px var(--accent),0 0 80px rgba(0,255,255,0.6);
-    }
-    .logo img{width:100%;height:auto;object-fit:contain;display:block;}
+    .wrap{max-width:900px;margin:0 auto;padding:20px;animation: fadeIn 1.2s ease;}
+    header{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px;padding:20px;border-radius:20px;background:linear-gradient(90deg,rgba(123,47,247,0.3),rgba(0,255,255,0.2));box-shadow:0 0 25px rgba(0,255,255,0.25);animation: float 4s ease-in-out infinite;}
+    .logo{width:100%;max-width:500px;height:auto;border-radius:20px;overflow:hidden;border:3px solid var(--accent);box-shadow:0 0 25px var(--accent2),0 0 50px rgba(123,47,247,0.5);animation: pulse 3s infinite;transform:rotate(0deg);transition:transform 0.6s ease, box-shadow 0.6s ease;}
+    .logo:hover{transform:scale(1.05) rotate(1deg);box-shadow:0 0 45px var(--accent),0 0 80px rgba(0,255,255,0.6);}
+    .logo img{width:100%;height:auto;object-fit:cover;display:block;}
     h1{margin:0;font-size:28px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation: glowText 3s infinite alternate;}
     p.lead{margin:4px 0 0;color:var(--muted);font-size:16px;}
-
     .intro{margin-top:18px;padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 15px rgba(0,255,255,0.1);animation: fadeUp 1.4s ease;}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.1);font-weight:600;color:var(--accent);border:1px solid rgba(6,182,212,0.3)}
-
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100%,1fr));gap:12px;margin-top:18px;animation: fadeUp 1.6s ease;}
     @media(min-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}}
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(0,0,0,0.25));
-      border-radius:16px;
-      padding:16px;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 15px rgba(0,255,255,0.1);
-      transition:transform .3s, box-shadow .3s;
-      animation: cardEntry 1.2s ease both;
-    }
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(0,0,0,0.25));border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 0 15px rgba(0,255,255,0.1);transition:transform .3s, box-shadow .3s;animation: cardEntry 1.2s ease both;}
     .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 0 25px rgba(0,255,255,0.4);}
     .cmd{font-family:monospace;background:rgba(0,0,0,0.35);padding:8px;border-radius:8px;display:block;color:var(--accent);animation: glow 2s infinite alternate;}
     .example{margin-top:6px;color:var(--muted);font-size:13px;}
-    button.copy{
-      margin-top:8px;
-      background:linear-gradient(90deg,var(--accent2),var(--accent));
-      border:none;
-      color:#fff;
-      padding:8px 12px;
-      border-radius:10px;
-      font-weight:600;
-      box-shadow:0 0 12px rgba(0,255,255,0.4);
-      cursor:pointer;
-      transition:0.2s;
-      animation: pulseBtn 2s infinite alternate;
-    }
+    button.copy{margin-top:8px;background:linear-gradient(90deg,var(--accent2),var(--accent));border:none;color:#fff;padding:8px 12px;border-radius:10px;font-weight:600;box-shadow:0 0 12px rgba(0,255,255,0.4);cursor:pointer;transition:0.2s;animation: pulseBtn 2s infinite alternate;}
     button.copy:hover{box-shadow:0 0 25px rgba(123,47,247,0.8);transform:scale(1.05);}
-
-    footer{
-      margin:28px 0 10px;text-align:center;color:var(--muted);font-size:13px;animation: fadeIn 2s ease;
-    }
-
+    footer{margin:28px 0 10px;text-align:center;color:var(--muted);font-size:13px;animation: fadeIn 2s ease;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
     @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
     @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
@@ -127,15 +70,31 @@
     </section>
 
     <main>
-      <!-- Comandos (mantidos como antes) -->
-      <!-- ... conteúdo de comandos ... -->
+      <div class="grid">
+        <div class="card"><span class="cmd">/foto 09103404715225</span><div class="example">Consulta Foto Nacional</div><button class="copy" data-cmd="/foto 09103404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/rg 666666</span><div class="example">Consulta RG</div><button class="copy" data-cmd="/rg 666666">Copiar</button></div>
+        <div class="card"><span class="cmd">/cpf 03404715225</span><div class="example">Consulta CPF</div><button class="copy" data-cmd="/cpf 03404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/email exemplo@gmail.com</span><div class="example">Consulta Email</div><button class="copy" data-cmd="/email exemplo@gmail.com">Copiar</button></div>
+        <div class="card"><span class="cmd">/telefone 11999999999</span><div class="example">Consulta Telefone</div><button class="copy" data-cmd="/telefone 11999999999">Copiar</button></div>
+        <div class="card"><span class="cmd">/vistoria ABC1234</span><div class="example">Consulta Vistoria</div><button class="copy" data-cmd="/vistoria ABC1234">Copiar</button></div>
+        <div class="card"><span class="cmd">/parentes 03404715225</span><div class="example">Consulta Parentes</div><button class="copy" data-cmd="/parentes 03404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/score 03404715225</span><div class="example">Consulta Score</div><button class="copy" data-cmd="/score 03404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/mae maria fernanda</span><div class="example">Consulta Mãe</div><button class="copy" data-cmd="/mae maria fernanda">Copiar</button></div>
+        <div class="card"><span class="cmd">/pai jao batista</span><div class="example">Consulta Pai</div><button class="copy" data-cmd="/pai jao batista">Copiar</button></div>
+        <div class="card"><span class="cmd">/nome jair messias bolsonaro</span><div class="example">Consulta Nome</div><button class="copy" data-cmd="/nome jair messias bolsonaro">Copiar</button></div>
+        <div class="card"><span class="cmd">/cnpj 000000000001</span><div class="example">Consulta CNPJ</div><button class="copy" data-cmd="/cnpj 000000000001">Copiar</button></div>
+        <div class="card"><span class="cmd">/placa ABC1234</span><div class="example">Consulta Placa</div><button class="copy" data-cmd="/placa ABC1234">Copiar</button></div>
+        <div class="card"><span class="cmd">/titulo 00000000</span><div class="example">Consulta Título Eleitoral</div><button class="copy" data-cmd="/titulo 00000000">Copiar</button></div>
+        <div class="card"><span class="cmd">/cnh 03404715225</span><div class="example">Consulta CNH Nacional</div><button class="copy" data-cmd="/cnh 03404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/processo 03404715225</span><div class="example">Consulta Processos</div><button class="copy" data-cmd="/processo 03404715225">Copiar</button></div>
+        <div class="card"><span class="cmd">/renevam 00539918229</span><div class="example">Consulta Renevam</div><button class="copy" data-cmd="/renevam 00539918229">Copiar</button></div>
+        <div class="card"><span class="cmd">/chassi 9BWZZZ32ZGP246344</span><div class="example">Consulta Chassi</div><button class="copy" data-cmd="/chassi 9BWZZZ32ZGP246344">Copiar</button></div>
+        <div class="card"><span class="cmd">/vacinas 00539918229</span><div class="example">Consulta Vacinas</div><button class="copy" data-cmd="/vacinas 00539918229">Copiar</button></div>
+      </div>
     </main>
 
-    <footer>
-      © Horiental Buscas — Versão Android • O melhor bot do momento 🚀
-    </footer>
+    <footer>© Horiental Buscas — Versão Android • O melhor bot do momento 🚀</footer>
   </div>
-
   <script>
     document.querySelectorAll('.copy').forEach(btn=>{
       btn.addEventListener('click',async()=>{
