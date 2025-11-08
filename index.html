@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Horiental Buscas — Guia de Comandos</title>
+  <style>
+    :root{
+      --bg:#030712;
+      --card:#0f1724;
+      --muted:#aab3c0;
+      --accent:#00ffff;
+      --accent2:#7b2ff7;
+      --glass:rgba(255,255,255,0.05);
+    }
+    *{box-sizing:border-box;font-family:'Poppins', system-ui, sans-serif;}
+    body{
+      margin:0;
+      background:radial-gradient(circle at top left, #09122c, #020617);
+      color:#f3f6fa;
+      min-height:100vh;
+    }
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:20px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      padding:12px;
+      border-radius:16px;
+      background:linear-gradient(90deg,rgba(123,47,247,0.3),rgba(0,255,255,0.2));
+      box-shadow:0 0 18px rgba(0,255,255,0.25);
+    }
+    .logo{width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 20px var(--accent2)}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block;}
+    h1{margin:0;font-size:22px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px;}
+
+    .intro{margin-top:18px;padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 15px rgba(0,255,255,0.1)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.1);font-weight:600;color:var(--accent);border:1px solid rgba(6,182,212,0.3)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100%,1fr));gap:12px;margin-top:18px;}
+    @media(min-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(0,0,0,0.25));
+      border-radius:16px;
+      padding:16px;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 12px rgba(0,255,255,0.08);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 0 18px rgba(0,255,255,0.25);}
+    .cmd{font-family:monospace;background:rgba(0,0,0,0.35);padding:8px;border-radius:8px;display:block;color:var(--accent)}
+    .example{margin-top:6px;color:var(--muted);font-size:13px;}
+    button.copy{
+      margin-top:8px;
+      background:linear-gradient(90deg,var(--accent2),var(--accent));
+      border:none;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 0 12px rgba(0,255,255,0.4);
+      cursor:pointer;
+      transition:0.2s;
+    }
+    button.copy:hover{box-shadow:0 0 18px rgba(123,47,247,0.6);}
+
+    footer{
+      margin:28px 0 10px;text-align:center;color:var(--muted);font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><img src="https://nier.onrender.com/file/jPS1.jpg" alt="Horiental Buscas"></div>
+      <div>
+        <h1>Horiental Buscas</h1>
+        <p class="lead">Guia moderno de comandos — otimizado para Android 📱</p>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div class="badge">Bot: Horiental Buscas</div>
+      <p style="margin-top:8px;color:var(--muted)">
+        O <strong>Horiental Buscas</strong> é um dos maiores e melhores bots de consultas disponíveis atualmente.
+        Com mais de <strong>17 módulos diferentes</strong> de pesquisa, ele oferece consultas rápidas, seguras e organizadas — tudo diretamente pelo seu dispositivo Android ou desktop.
+        Este guia apresenta todos os comandos e formatos de uso para aproveitar o máximo do bot.
+      </p>
+      <p style="margin-top:8px;color:var(--muted)">Use os comandos abaixo. Clique em “Copiar” para enviar rapidamente pelo celular.</p>
+    </section>
+
+    <main>
+      <div class="grid">
+        <div class="card"><strong>Consulta Foto (Nacional)</strong><div class="cmd">/foto 09103404715225</div><div class="example">Exemplo: /foto 09103404715225</div><button class="copy" data-cmd="/foto 09103404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta RG</strong><div class="cmd">/rg 666666</div><div class="example">Exemplo: /rg 666666</div><button class="copy" data-cmd="/rg 666666">Copiar</button></div>
+        <div class="card"><strong>Consulta CPF</strong><div class="cmd">/cpf 03404715225</div><div class="example">Exemplo: /cpf 03404715225</div><button class="copy" data-cmd="/cpf 03404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta Email</strong><div class="cmd">/email exemplo@gmail.com</div><div class="example">Exemplo: /email exemplo@gmail.com</div><button class="copy" data-cmd="/email exemplo@gmail.com">Copiar</button></div>
+        <div class="card"><strong>Consulta Telefone</strong><div class="cmd">/telefone 11999999999</div><div class="example">Use DDD + número.</div><button class="copy" data-cmd="/telefone 11999999999">Copiar</button></div>
+        <div class="card"><strong>Consulta Vistoria</strong><div class="cmd">/vistoria ABC1234</div><div class="example">Exemplo: /vistoria ABC1234</div><button class="copy" data-cmd="/vistoria ABC1234">Copiar</button></div>
+        <div class="card"><strong>Consulta Parentes</strong><div class="cmd">/parentes 03404715225</div><div class="example">Busca parentes por CPF.</div><button class="copy" data-cmd="/parentes 03404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta Score</strong><div class="cmd">/score 03404715225</div><div class="example">Pontuação de crédito.</div><button class="copy" data-cmd="/score 03404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta Mãe</strong><div class="cmd">/mae maria fernanda</div><div class="example">Nome completo da mãe.</div><button class="copy" data-cmd="/mae maria fernanda">Copiar</button></div>
+        <div class="card"><strong>Consulta Pai</strong><div class="cmd">/pai jao batista</div><div class="example">Nome completo do pai.</div><button class="copy" data-cmd="/pai jao batista">Copiar</button></div>
+        <div class="card"><strong>Consulta Nome</strong><div class="cmd">/nome jair messias bolsonaro</div><div class="example">Busca por nome.</div><button class="copy" data-cmd="/nome jair messias bolsonaro">Copiar</button></div>
+        <div class="card"><strong>Consulta CNPJ</strong><div class="cmd">/cnpj 000000000001</div><div class="example">Use só números.</div><button class="copy" data-cmd="/cnpj 000000000001">Copiar</button></div>
+        <div class="card"><strong>Consulta Placa</strong><div class="cmd">/placa ABC1234</div><div class="example">Formato ABC1234.</div><button class="copy" data-cmd="/placa ABC1234">Copiar</button></div>
+        <div class="card"><strong>Consulta Título Eleitoral</strong><div class="cmd">/titulo 00000000</div><div class="example">Somente números.</div><button class="copy" data-cmd="/titulo 00000000">Copiar</button></div>
+        <div class="card"><strong>Consulta CNH</strong><div class="cmd">/cnh 03404715225</div><div class="example">Número do documento.</div><button class="copy" data-cmd="/cnh 03404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta Processos</strong><div class="cmd">/processo 03404715225</div><div class="example">Busca por processos.</div><button class="copy" data-cmd="/processo 03404715225">Copiar</button></div>
+        <div class="card"><strong>Consulta RENEVAM</strong><div class="cmd">/renevam 00539918229</div><div class="example">Número RENAVAM.</div><button class="copy" data-cmd="/renevam 00539918229">Copiar</button></div>
+        <div class="card"><strong>Consulta Chassi</strong><div class="cmd">/chassi 9BWZZZ32ZGP246344</div><div class="example">VIN completo.</div><button class="copy" data-cmd="/chassi 9BWZZZ32ZGP246344">Copiar</button></div>
+        <div class="card"><strong>Consulta Vacinas</strong><div class="cmd">/vacinas 00539918229</div><div class="example">Consulta vacinas.</div><button class="copy" data-cmd="/vacinas 00539918229">Copiar</button></div>
+      </div>
+
+      <div style="margin-top:20px;padding:14px;background:rgba(255,255,255,0.06);border-radius:12px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 14px rgba(123,47,247,0.2)">
+        <strong>⚠️ Observações</strong>
+        <ul style="color:var(--muted);margin-top:8px">
+          <li>Substitua os exemplos pelos dados reais.</li>
+          <li>Use de forma ética e responsável.</li>
+          <li>Todos os comandos começam com <code>/</code>.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      © Horiental Buscas — Versão Android • O melhor bot do momento 🚀
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click',async()=>{
+        const cmd = btn.getAttribute('data-cmd');
+        try{await navigator.clipboard.writeText(cmd);btn.textContent='Copiado! ✅';setTimeout(()=>btn.textContent='Copiar',1200);}catch(e){const ta=document.createElement('textarea');ta.value=cmd;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);btn.textContent='Copiado! ✅';setTimeout(()=>btn.textContent='Copiar',1200);}}
+      )
+    })
+  </script>
+</body>
+</html>
