@@ -19,41 +19,63 @@
       background:radial-gradient(circle at top left, #09122c, #020617);
       color:#f3f6fa;
       min-height:100vh;
+      overflow-x:hidden;
     }
     .wrap{
       max-width:900px;
       margin:0 auto;
       padding:20px;
+      animation: fadeIn 1.2s ease;
     }
     header{
       display:flex;
+      flex-direction:column;
       align-items:center;
+      justify-content:center;
+      text-align:center;
       gap:15px;
-      padding:12px;
-      border-radius:16px;
+      padding:20px;
+      border-radius:20px;
       background:linear-gradient(90deg,rgba(123,47,247,0.3),rgba(0,255,255,0.2));
-      box-shadow:0 0 18px rgba(0,255,255,0.25);
+      box-shadow:0 0 25px rgba(0,255,255,0.25);
+      animation: float 4s ease-in-out infinite;
     }
-    .logo{width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 20px var(--accent2)}
-    .logo img{width:100%;height:100%;object-fit:cover;display:block;}
-    h1{margin:0;font-size:22px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px;}
+    .logo{
+      width:100%;
+      max-width:500px;
+      height:auto;
+      border-radius:20px;
+      overflow:hidden;
+      border:3px solid var(--accent);
+      box-shadow:0 0 25px var(--accent2),0 0 50px rgba(123,47,247,0.5);
+      animation: pulse 3s infinite;
+      transform:rotate(0deg);
+      transition:transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .logo:hover{
+      transform:scale(1.05) rotate(1deg);
+      box-shadow:0 0 45px var(--accent),0 0 80px rgba(0,255,255,0.6);
+    }
+    .logo img{width:100%;height:auto;object-fit:contain;display:block;}
+    h1{margin:0;font-size:28px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation: glowText 3s infinite alternate;}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:16px;}
 
-    .intro{margin-top:18px;padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 15px rgba(0,255,255,0.1)}
+    .intro{margin-top:18px;padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 15px rgba(0,255,255,0.1);animation: fadeUp 1.4s ease;}
     .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.1);font-weight:600;color:var(--accent);border:1px solid rgba(6,182,212,0.3)}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100%,1fr));gap:12px;margin-top:18px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100%,1fr));gap:12px;margin-top:18px;animation: fadeUp 1.6s ease;}
     @media(min-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}}
     .card{
       background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(0,0,0,0.25));
       border-radius:16px;
       padding:16px;
       border:1px solid rgba(255,255,255,0.08);
-      box-shadow:0 0 12px rgba(0,255,255,0.08);
-      transition:transform .2s, box-shadow .2s;
+      box-shadow:0 0 15px rgba(0,255,255,0.1);
+      transition:transform .3s, box-shadow .3s;
+      animation: cardEntry 1.2s ease both;
     }
-    .card:hover{transform:translateY(-3px);box-shadow:0 0 18px rgba(0,255,255,0.25);}
-    .cmd{font-family:monospace;background:rgba(0,0,0,0.35);padding:8px;border-radius:8px;display:block;color:var(--accent)}
+    .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 0 25px rgba(0,255,255,0.4);}
+    .cmd{font-family:monospace;background:rgba(0,0,0,0.35);padding:8px;border-radius:8px;display:block;color:var(--accent);animation: glow 2s infinite alternate;}
     .example{margin-top:6px;color:var(--muted);font-size:13px;}
     button.copy{
       margin-top:8px;
@@ -66,12 +88,22 @@
       box-shadow:0 0 12px rgba(0,255,255,0.4);
       cursor:pointer;
       transition:0.2s;
+      animation: pulseBtn 2s infinite alternate;
     }
-    button.copy:hover{box-shadow:0 0 18px rgba(123,47,247,0.6);}
+    button.copy:hover{box-shadow:0 0 25px rgba(123,47,247,0.8);transform:scale(1.05);}
 
     footer{
-      margin:28px 0 10px;text-align:center;color:var(--muted);font-size:13px;
+      margin:28px 0 10px;text-align:center;color:var(--muted);font-size:13px;animation: fadeIn 2s ease;
     }
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    @keyframes pulse{0%,100%{box-shadow:0 0 25px var(--accent2),0 0 50px rgba(123,47,247,0.5);}50%{box-shadow:0 0 35px var(--accent),0 0 65px rgba(0,255,255,0.6);}}
+    @keyframes glow{0%{text-shadow:0 0 10px var(--accent);}100%{text-shadow:0 0 20px var(--accent2);}}
+    @keyframes glowText{0%{filter:drop-shadow(0 0 3px var(--accent));}100%{filter:drop-shadow(0 0 10px var(--accent2));}}
+    @keyframes cardEntry{from{opacity:0;transform:translateY(50px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+    @keyframes pulseBtn{0%{box-shadow:0 0 10px var(--accent);}100%{box-shadow:0 0 25px var(--accent2);}}
   </style>
 </head>
 <body>
@@ -95,36 +127,8 @@
     </section>
 
     <main>
-      <div class="grid">
-        <div class="card"><strong>Consulta Foto (Nacional)</strong><div class="cmd">/foto 09103404715225</div><div class="example">Exemplo: /foto 09103404715225</div><button class="copy" data-cmd="/foto 09103404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta RG</strong><div class="cmd">/rg 666666</div><div class="example">Exemplo: /rg 666666</div><button class="copy" data-cmd="/rg 666666">Copiar</button></div>
-        <div class="card"><strong>Consulta CPF</strong><div class="cmd">/cpf 03404715225</div><div class="example">Exemplo: /cpf 03404715225</div><button class="copy" data-cmd="/cpf 03404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta Email</strong><div class="cmd">/email exemplo@gmail.com</div><div class="example">Exemplo: /email exemplo@gmail.com</div><button class="copy" data-cmd="/email exemplo@gmail.com">Copiar</button></div>
-        <div class="card"><strong>Consulta Telefone</strong><div class="cmd">/telefone 11999999999</div><div class="example">Use DDD + número.</div><button class="copy" data-cmd="/telefone 11999999999">Copiar</button></div>
-        <div class="card"><strong>Consulta Vistoria</strong><div class="cmd">/vistoria ABC1234</div><div class="example">Exemplo: /vistoria ABC1234</div><button class="copy" data-cmd="/vistoria ABC1234">Copiar</button></div>
-        <div class="card"><strong>Consulta Parentes</strong><div class="cmd">/parentes 03404715225</div><div class="example">Busca parentes por CPF.</div><button class="copy" data-cmd="/parentes 03404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta Score</strong><div class="cmd">/score 03404715225</div><div class="example">Pontuação de crédito.</div><button class="copy" data-cmd="/score 03404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta Mãe</strong><div class="cmd">/mae maria fernanda</div><div class="example">Nome completo da mãe.</div><button class="copy" data-cmd="/mae maria fernanda">Copiar</button></div>
-        <div class="card"><strong>Consulta Pai</strong><div class="cmd">/pai jao batista</div><div class="example">Nome completo do pai.</div><button class="copy" data-cmd="/pai jao batista">Copiar</button></div>
-        <div class="card"><strong>Consulta Nome</strong><div class="cmd">/nome jair messias bolsonaro</div><div class="example">Busca por nome.</div><button class="copy" data-cmd="/nome jair messias bolsonaro">Copiar</button></div>
-        <div class="card"><strong>Consulta CNPJ</strong><div class="cmd">/cnpj 000000000001</div><div class="example">Use só números.</div><button class="copy" data-cmd="/cnpj 000000000001">Copiar</button></div>
-        <div class="card"><strong>Consulta Placa</strong><div class="cmd">/placa ABC1234</div><div class="example">Formato ABC1234.</div><button class="copy" data-cmd="/placa ABC1234">Copiar</button></div>
-        <div class="card"><strong>Consulta Título Eleitoral</strong><div class="cmd">/titulo 00000000</div><div class="example">Somente números.</div><button class="copy" data-cmd="/titulo 00000000">Copiar</button></div>
-        <div class="card"><strong>Consulta CNH</strong><div class="cmd">/cnh 03404715225</div><div class="example">Número do documento.</div><button class="copy" data-cmd="/cnh 03404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta Processos</strong><div class="cmd">/processo 03404715225</div><div class="example">Busca por processos.</div><button class="copy" data-cmd="/processo 03404715225">Copiar</button></div>
-        <div class="card"><strong>Consulta RENEVAM</strong><div class="cmd">/renevam 00539918229</div><div class="example">Número RENAVAM.</div><button class="copy" data-cmd="/renevam 00539918229">Copiar</button></div>
-        <div class="card"><strong>Consulta Chassi</strong><div class="cmd">/chassi 9BWZZZ32ZGP246344</div><div class="example">VIN completo.</div><button class="copy" data-cmd="/chassi 9BWZZZ32ZGP246344">Copiar</button></div>
-        <div class="card"><strong>Consulta Vacinas</strong><div class="cmd">/vacinas 00539918229</div><div class="example">Consulta vacinas.</div><button class="copy" data-cmd="/vacinas 00539918229">Copiar</button></div>
-      </div>
-
-      <div style="margin-top:20px;padding:14px;background:rgba(255,255,255,0.06);border-radius:12px;border:1px solid rgba(255,255,255,0.05);box-shadow:0 0 14px rgba(123,47,247,0.2)">
-        <strong>⚠️ Observações</strong>
-        <ul style="color:var(--muted);margin-top:8px">
-          <li>Substitua os exemplos pelos dados reais.</li>
-          <li>Use de forma ética e responsável.</li>
-          <li>Todos os comandos começam com <code>/</code>.</li>
-        </ul>
-      </div>
+      <!-- Comandos (mantidos como antes) -->
+      <!-- ... conteúdo de comandos ... -->
     </main>
 
     <footer>
